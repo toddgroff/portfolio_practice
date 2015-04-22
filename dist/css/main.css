@@ -2537,18 +2537,11 @@ body {
   font-weight: 100;
   font-size: 1.25rem; }
 
-header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  background: white; }
-
 main {
-  width: 1088px;
-  margin: 15em auto 0 auto;
-  overflow-y: none;
-  line-height: 1.4em; }
+  position: relative; }
+
+header {
+  position: relative; }
 
 a {
   font-weight: 400;
@@ -2596,7 +2589,8 @@ a {
   text-transform: uppercase; }
 
 .double-slash {
-  letter-spacing: -3px; }
+  letter-spacing: -3px;
+  font-style: italic; }
 
 .dash-header {
   position: absolute;
@@ -2604,9 +2598,36 @@ a {
   left: -23em;
   z-index: -1; }
 
-.construction-section {
-  margin-top: 5em;
-  font-size: 1.25em; }
+.dash-side {
+  position: absolute;
+  left: 19px;
+  top: -78px; }
 
-.notification-form {
-  padding: 1.5em 0; }
+.dash-footer {
+  position: absolute;
+  bottom: -1em;
+  left: -40em;
+  z-index: -1; }
+
+.call-to-action {
+  margin-top: 5em;
+  font-size: 1em; }
+
+.contact {
+  font-size: 1.25em;
+  font-weight: 400;
+  position: fixed;
+  bottom: 3em;
+  left: 39em;
+  background: white;
+  padding: 0.5em 0.5em 0 0.5em; }
+
+.portfolio {
+  width: 950px;
+  min-height: 500px;
+  margin: 4em auto 2em 0;
+  overflow-y: scroll;
+  line-height: 1.4em;
+  background: lightgray;
+  position: relative;
+  z-index: 5; }
