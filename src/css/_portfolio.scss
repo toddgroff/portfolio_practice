@@ -15,6 +15,8 @@ header {
 a {
   font-weight: 400;
   color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .monogram-block {
@@ -91,7 +93,7 @@ a {
   position: absolute;
   bottom: -1em;
   left: -40em;
-  z-index: -1;
+  z-index: -10;
 }
 
 .call-to-action {
@@ -107,6 +109,10 @@ a {
   left: 39em;
   background: white;
   padding: 0.5em 0.5em 0 0.5em;
+}
+
+.icon-link {
+  font-size: 1.5em;
 }
 
 .portfolio {

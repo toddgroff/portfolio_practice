@@ -2545,7 +2545,9 @@ header {
 
 a {
   font-weight: 400;
-  color: black; }
+  color: black;
+  text-decoration: none;
+  cursor: pointer; }
 
 .monogram-block {
   background: #A8A9AD;
@@ -2607,7 +2609,7 @@ a {
   position: absolute;
   bottom: -1em;
   left: -40em;
-  z-index: -1; }
+  z-index: -10; }
 
 .call-to-action {
   margin-top: 5em;
@@ -2621,6 +2623,9 @@ a {
   left: 39em;
   background: white;
   padding: 0.5em 0.5em 0 0.5em; }
+
+.icon-link {
+  font-size: 1.5em; }
 
 .portfolio {
   width: 950px;
