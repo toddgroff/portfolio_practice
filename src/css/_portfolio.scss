@@ -222,8 +222,8 @@ a {
         &:hover {
           background-color: darken($background-from-list, 10%);
           background-repeat: no-repeat;
-          background-position: top;
           background-size: cover;
+          background-position: top;
         }
       }
     }
@@ -286,7 +286,7 @@ a {
   .flowerpatch {
     background: url("http://toddgroff.github.io/src/img/flowerpatch_design.png");
     background-size: cover;
-    background-position: center;
+    // background-position: center;
   }
 
   .flowerpatch-presentation {
