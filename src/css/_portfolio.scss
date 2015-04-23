@@ -135,7 +135,6 @@ a {
   width: 950px;
   min-height: 500px;
   margin: 4em 2em 4em 0;
-  overflow-y: scroll;
   line-height: 1.4em;
   background: lightgray;
   position: relative;
@@ -188,7 +187,13 @@ a {
     width: 100%;
 
     &:hover .overlay {
+      transition: $transition;
       opacity: 0.6;
+    }
+
+    &:hover .grid-copy {
+      transition: $transition;
+      opacity: 1;
     }
 
     @include media($large-screen) {
@@ -208,7 +213,6 @@ a {
           background-repeat: no-repeat;
           background-position: top;
           background-size: cover;
-          }
         }
       }
     }
@@ -231,7 +235,6 @@ a {
   .grid-item p {
       line-height: 1.5em;
       @include media($medium-screen) {
-        max-width: 70%;
       }
     }
 
@@ -241,7 +244,6 @@ a {
     }
     p {
       @include media($medium-screen) {
-        max-width: 60%;
       }
     }
   }
@@ -260,23 +262,29 @@ a {
 
   .overlay {
     position: absolute;
-    t
+    top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     z-index: 10;
     background: black;
     opacity: 0.05;
+    transition: $transition;
   }
 
   .grid-copy {
+    @include pad(1.5em);
     color: white;
     font-weight: 100;
     text-align: left;
     position: absolute;
-    top: 1em;
-    left: 1em;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     z-index: 15;
+    opacity: 0;
+    transition: $transition;
   }
 
   .coming-soon {

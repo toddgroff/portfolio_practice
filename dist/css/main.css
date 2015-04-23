@@ -2647,7 +2647,6 @@ a {
   width: 950px;
   min-height: 500px;
   margin: 4em 2em 4em 0;
-  overflow-y: scroll;
   line-height: 1.4em;
   background: lightgray;
   position: relative;
@@ -2673,13 +2672,18 @@ a {
   text-align: center;
   text-decoration: none;
   width: 100%; }
+  .grid-items .grid-item:hover .overlay {
+    transition: all 0.25s ease-in-out;
+    opacity: 0.6; }
+  .grid-items .grid-item:hover .grid-copy {
+    transition: all 0.25s ease-in-out;
+    opacity: 1; }
   @media screen and (min-width: 53.75em) {
     .grid-items .grid-item {
       width: 33.33333%; } }
   .grid-items .grid-item:nth-child(1) {
     background-color: #6b83a6; }
     .grid-items .grid-item:nth-child(1):focus, .grid-items .grid-item:nth-child(1):hover {
-      opacity: 1;
       background-color: #536a8b;
       background-repeat: no-repeat;
       background-position: top;
@@ -2687,7 +2691,6 @@ a {
   .grid-items .grid-item:nth-child(2) {
     background-color: #3581A5; }
     .grid-items .grid-item:nth-child(2):focus, .grid-items .grid-item:nth-child(2):hover {
-      opacity: 1;
       background-color: #29637e;
       background-repeat: no-repeat;
       background-position: top;
@@ -2695,7 +2698,6 @@ a {
   .grid-items .grid-item:nth-child(3) {
     background-color: #5FBEBE; }
     .grid-items .grid-item:nth-child(3):focus, .grid-items .grid-item:nth-child(3):hover {
-      opacity: 1;
       background-color: #44a6a6;
       background-repeat: no-repeat;
       background-position: top;
@@ -2703,7 +2705,6 @@ a {
   .grid-items .grid-item:nth-child(4) {
     background-color: #98C79A; }
     .grid-items .grid-item:nth-child(4):focus, .grid-items .grid-item:nth-child(4):hover {
-      opacity: 1;
       background-color: #77b57a;
       background-repeat: no-repeat;
       background-position: top;
@@ -2711,7 +2712,6 @@ a {
   .grid-items .grid-item:nth-child(5) {
     background-color: #A7A891; }
     .grid-items .grid-item:nth-child(5):focus, .grid-items .grid-item:nth-child(5):hover {
-      opacity: 1;
       background-color: #909175;
       background-repeat: no-repeat;
       background-position: top;
@@ -2719,7 +2719,6 @@ a {
   .grid-items .grid-item:nth-child(6) {
     background-color: #BDCC97; }
     .grid-items .grid-item:nth-child(6):focus, .grid-items .grid-item:nth-child(6):hover {
-      opacity: 1;
       background-color: #a7bb75;
       background-repeat: no-repeat;
       background-position: top;
@@ -2727,7 +2726,6 @@ a {
   .grid-items .grid-item:nth-child(7) {
     background-color: #979EA0; }
     .grid-items .grid-item:nth-child(7):focus, .grid-items .grid-item:nth-child(7):hover {
-      opacity: 1;
       background-color: #7c8588;
       background-repeat: no-repeat;
       background-position: top;
@@ -2744,15 +2742,9 @@ a {
   text-transform: uppercase; }
 .grid-items .grid-item p {
   line-height: 1.5em; }
-  @media screen and (min-width: 40em) {
-    .grid-items .grid-item p {
-      max-width: 70%; } }
 @media screen and (min-width: 53.75em) {
   .grid-items .grid-item-big {
     width: 66.66667%; } }
-@media screen and (min-width: 40em) {
-  .grid-items .grid-item-big p {
-    max-width: 60%; } }
 .grid-items .grid-item-image {
   background-color: #6b83a6;
   background-position: top;
@@ -2763,22 +2755,27 @@ a {
   background-position: center; }
 .grid-items .overlay {
   position: absolute;
+  top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   z-index: 10;
   background: black;
-  opacity: 0.05; }
-  .grid-items .overlay:hover {
-    opacity: 0.6; }
+  opacity: 0.05;
+  transition: all 0.25s ease-in-out; }
 .grid-items .grid-copy {
+  padding: 1.5em;
   color: white;
   font-weight: 100;
   text-align: left;
   position: absolute;
-  top: 1em;
-  left: 1em;
-  z-index: 15; }
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 15;
+  opacity: 0;
+  transition: all 0.25s ease-in-out; }
 .grid-items .coming-soon {
   pointer-events: none; }
 
