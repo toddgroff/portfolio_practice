@@ -2762,11 +2762,11 @@ a {
   background-position: top;
   background-repeat: no-repeat; }
 .grid-items .flowerpatch {
-  background: url("/Users/toddgroff/src/toddgroff.github.io/src/img/flowerpatch_design.png");
+  background: url("http://toddgroff.github.io/src/img/flowerpatch_design.png");
   background-size: cover;
   background-position: center; }
 .grid-items .flowerpatch-presentation {
-  background: url("/Users/toddgroff/src/toddgroff.github.io/src/img/flowerpatch_presentation.png");
+  background: url("http://toddgroff.github.io/dist/img/flowerpatch_presentation.png");
   background-size: cover;
   background-position-x: 40%; }
 .grid-items .overlay {
