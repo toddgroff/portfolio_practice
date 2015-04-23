@@ -2541,7 +2541,8 @@ Copyright (c) 2014 Daniel Eden
 body {
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
-  font-size: 1.25rem; }
+  font-size: 1.25rem;
+  margin: 0 3.25em; }
 
 main {
   position: relative; }
@@ -2614,7 +2615,9 @@ a {
 .dash-side {
   position: absolute;
   left: 19px;
-  top: -78px; }
+  top: -78px;
+  z-index: 5;
+  background: white; }
 
 .dash-footer {
   position: absolute;
@@ -2632,7 +2635,7 @@ a {
   line-height: 1.25em;
   position: fixed;
   bottom: 3em;
-  left: 39em;
+  left: 41.58em;
   background: white;
   padding: 0.5em 0.5em 0 0.5em; }
   .contact .description {
@@ -2648,7 +2651,7 @@ a {
 .portfolio {
   width: 950px;
   min-height: 500px;
-  margin: 4em 2em 4em 0;
+  margin: 4em 0 3.25em 0;
   line-height: 1.4em;
   background: lightgray;
   position: relative;
