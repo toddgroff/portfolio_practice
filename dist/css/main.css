@@ -2685,7 +2685,8 @@ a {
   .grid-items .grid-item:hover .grid-copy {
     transition: all 0.75s ease-in-out;
     opacity: 1;
-    bottom: 0; }
+    bottom: 0;
+    top: 0; }
   @media screen and (min-width: 53.75em) {
     .grid-items .grid-item {
       width: 33.33333%; } }
@@ -2787,7 +2788,7 @@ a {
   font-weight: 100;
   text-align: left;
   position: absolute;
-  top: 0;
+  top: -100%;
   right: 0;
   left: 0;
   z-index: 15;
