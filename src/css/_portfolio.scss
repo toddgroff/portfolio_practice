@@ -1,3 +1,5 @@
+$transition: all 0.25s ease-in-out;
+
 body {
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
@@ -10,6 +12,7 @@ main {
 
 header {
   position: relative;
+  z-index: 10;
 }
 
 a {
@@ -17,16 +20,22 @@ a {
   color: black;
   text-decoration: none;
   cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    transition: $transition;
+    color: $gray;
+  }
 }
 
 .monogram-block {
-  background: #A8A9AD;
+  background: $gray;
   width: 22rem;
   height: 12rem;
   font-size: 7rem;
   font-weight: 100;
   position: relative;
-  }
+}
 
 .monogram {
   position: absolute;
@@ -104,11 +113,18 @@ a {
 .contact {
   font-size: 1.25em;
   font-weight: 400;
+  line-height: 1.25em;
   position: fixed;
   bottom: 3em;
   left: 39em;
   background: white;
   padding: 0.5em 0.5em 0 0.5em;
+
+  .description {
+    font-size: 0.6em;
+    padding: 0 2em 2em 0;
+    line-height: 1.25em;
+  }
 }
 
 .icon-link {
@@ -118,10 +134,156 @@ a {
 .portfolio {
   width: 950px;
   min-height: 500px;
-  margin: 4em auto 2em 0;
+  margin: 4em 2em 4em 0;
   overflow-y: scroll;
   line-height: 1.4em;
   background: lightgray;
   position: relative;
   z-index: 5;
+  font-weight: 400;
 }
+
+/* Code used and adapted from Bourbon grid refill */
+
+@mixin grid-item-columns($columns) {
+  width: (100% / 12) * $columns;
+}
+
+.grid-items {
+  $action-color: #477DCA !default;
+  $base-background-color: white !default;
+  $medium-screen: em(640) !default;
+  $large-screen: em(860) !default;
+  $grid-items-background: $base-background-color;
+  $grid-item-background: desaturate($action-color, 30%);
+  $grid-item-colors:
+    desaturate($action-color, 30%),
+    #3581A5,
+    #5FBEBE,
+    #98C79A,
+    #A7A891,
+    #BDCC97,
+    #979EA0;
+  $grid-item-border-size: 9px;
+  $grid-item-columns: 4;
+  $grid-item-big-columns: 8;
+  $grid-item-color: white;
+  $grid-item-height: 25em;
+
+  @include clearfix;
+
+  .grid-item {
+    @include transition ($transition);
+    position: relative;
+    background: $grid-item-background;
+    background-size: cover;
+    cursor: pointer;
+    float: left;
+    height: $grid-item-height;
+    overflow: hidden;
+    outline: none;
+    padding: 2em;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+
+    &:hover .overlay {
+      opacity: 0.6;
+    }
+
+    @include media($large-screen) {
+      @include grid-item-columns($grid-item-columns);
+    }
+
+    @for $i from 1 through length($grid-item-colors) {
+// assign colors from $grid-item-colors list
+      &:nth-child(#{$i}) {
+        $background-from-list: nth($grid-item-colors, $i);
+        background-color: $background-from-list;
+        // box-shadow: inset 0px 0px 1px 2px darken($background-from-list, 10%);
+
+        &:focus,
+        &:hover {
+          background-color: darken($background-from-list, 10%);
+          background-repeat: no-repeat;
+          background-position: top;
+          background-size: cover;
+          }
+        }
+      }
+    }
+  }
+
+  .grid-item img {
+      display: block;
+      height: 3em;
+      margin-bottom: 1em;
+      margin: auto;
+    }
+
+  .grid-item h3 {
+      color: $grid-item-color;
+      font-size: 1.3em;
+      margin-bottom: 0.4em;
+      text-transform: uppercase;
+    }
+
+  .grid-item p {
+      line-height: 1.5em;
+      @include media($medium-screen) {
+        max-width: 70%;
+      }
+    }
+
+  .grid-item-big {
+    @include media($large-screen) {
+      @include grid-item-columns($grid-item-big-columns);
+    }
+    p {
+      @include media($medium-screen) {
+        max-width: 60%;
+      }
+    }
+  }
+
+  .grid-item-image {
+    background-color: $grid-item-background;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+
+  .flowerpatch {
+    background: url("/Users/toddgroff/src/toddgroff.github.io/src/img/flowerpatch_design.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .overlay {
+    position: absolute;
+    t
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    background: black;
+    opacity: 0.05;
+  }
+
+  .grid-copy {
+    color: white;
+    font-weight: 100;
+    text-align: left;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    z-index: 15;
+  }
+
+  .coming-soon {
+    pointer-events: none;
+  }
+
+}
+
+
+/* End Bourbon grid refill code */
