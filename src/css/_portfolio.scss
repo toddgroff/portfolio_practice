@@ -1,4 +1,5 @@
 $transition: all 0.25s ease-in-out;
+$slow-transition: all 0.75s ease-in-out;
 
 body {
   font-family: 'Raleway', sans-serif;
@@ -121,9 +122,11 @@ a {
   padding: 0.5em 0.5em 0 0.5em;
 
   .description {
+    font-weight: 100;
     font-size: 0.6em;
     padding: 0 2em 2em 0;
     line-height: 1.25em;
+    max-width: 18em;
   }
 }
 
@@ -166,6 +169,7 @@ a {
   $grid-item-border-size: 9px;
   $grid-item-columns: 4;
   $grid-item-big-columns: 8;
+  $grid-item-full-columns: 12;
   $grid-item-color: white;
   $grid-item-height: 25em;
 
@@ -187,13 +191,16 @@ a {
     width: 100%;
 
     &:hover .overlay {
-      transition: $transition;
-      opacity: 0.6;
+      transition: $slow-transition;
+      opacity: 0.75;
+      bottom: 0;
+      height: 100%;
     }
 
     &:hover .grid-copy {
-      transition: $transition;
+      transition: $slow-transition;
       opacity: 1;
+      bottom: 0;
     }
 
     @include media($large-screen) {
@@ -225,22 +232,40 @@ a {
       margin: auto;
     }
 
-  .grid-item h3 {
+  .grid-item {
+    h3 {
       color: $grid-item-color;
       font-size: 1.3em;
       margin-bottom: 0.4em;
       text-transform: uppercase;
     }
 
-  .grid-item p {
-      line-height: 1.5em;
-      @include media($medium-screen) {
-      }
+    h4 {
+      font-size: 1em;
+      text-transform: uppercase;
     }
+
+    p {
+        line-height: 1.5em;
+        @include media($medium-screen);
+        margin-bottom: 1em;
+    }
+  }
+
 
   .grid-item-big {
     @include media($large-screen) {
       @include grid-item-columns($grid-item-big-columns);
+    }
+    p {
+      @include media($medium-screen) {
+      }
+    }
+  }
+
+  .grid-item-full {
+    @include media($large-screen) {
+      @include grid-item-columns($grid-item-full-columns);
     }
     p {
       @include media($medium-screen) {
@@ -260,16 +285,22 @@ a {
     background-position: center;
   }
 
+  .flowerpatch-presentation {
+    background: url("/Users/toddgroff/src/toddgroff.github.io/src/img/flowerpatch_presentation.png");
+    background-size: cover;
+    background-position-x: 40%;
+  }
+
   .overlay {
     position: absolute;
+    height: 0;
     top: 0;
-    bottom: 0;
     right: 0;
     left: 0;
     z-index: 10;
     background: black;
     opacity: 0.05;
-    transition: $transition;
+    transition: $slow-transition;
   }
 
   .grid-copy {
@@ -279,16 +310,18 @@ a {
     text-align: left;
     position: absolute;
     top: 0;
-    bottom: 0;
     right: 0;
     left: 0;
     z-index: 15;
     opacity: 0;
-    transition: $transition;
+    transition: $slow-transition;
+
   }
 
   .coming-soon {
     pointer-events: none;
+    opacity: 1;
+    height: 10em;
   }
 
 }
