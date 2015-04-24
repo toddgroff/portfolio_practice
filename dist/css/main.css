@@ -32,6 +32,8 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+/* transitions */
+/* Media queries */
 /*!
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license - http://opensource.org/licenses/MIT
@@ -2543,6 +2545,10 @@ body {
   font-weight: 100;
   font-size: 1.25rem;
   margin: 0 3.25em; }
+  @media screen and (max-width: 860px)  {
+    body {
+      margin: 0;
+      overflow-x: hidden; } }
 
 main {
   position: relative; }
@@ -2557,9 +2563,17 @@ a {
   text-decoration: none;
   cursor: pointer;
   transition: all 0.25s ease-in-out; }
-  a:hover {
+  a:hover, a:focus {
     transition: all 0.25s ease-in-out;
-    color: #A8A9AD; }
+    color: #A8A9AD;
+    outline: none; }
+
+@media screen and (max-width: 860px)  {
+  .icon-block {
+    width: 480px; } }
+@media screen and (max-width: 500px)  {
+  .icon-block {
+    width: 100%; } }
 
 .monogram-block {
   background: #A8A9AD;
@@ -2568,6 +2582,16 @@ a {
   font-size: 7rem;
   font-weight: 100;
   position: relative; }
+  @media screen and (max-width: 860px)  {
+    .monogram-block {
+      width: 70%; } }
+  @media screen and (max-width: 500px)  {
+    .monogram-block {
+      height: 100%; }
+      .monogram-block:before {
+        content: "";
+        padding-top: 64.5%;
+        display: block; } }
 
 .monogram {
   position: absolute;
@@ -2576,6 +2600,9 @@ a {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   color: white; }
+  @media screen and (max-width: 375px)  {
+    .monogram {
+      font-size: 0.8em; } }
 
 .w-g {
   letter-spacing: -15px; }
@@ -2583,6 +2610,10 @@ a {
 .headshot {
   display: inline-block;
   height: 12rem; }
+  @media screen and (max-width: 500px)  {
+    .headshot {
+      width: 30%;
+      height: 100%; } }
 
 .header {
   display: inline-block; }
@@ -2595,12 +2626,18 @@ a {
   text-transform: uppercase;
   font-weight: 800;
   font-size: 2.25em; }
+  @media screen and (max-width: 500px)  {
+    .full-name {
+      font-size: 1.65em; } }
 
 .profession {
   line-height: 1.2em;
   font-size: 1.1em;
   font-weight: 400;
   text-transform: uppercase; }
+  @media screen and (max-width: 500px)  {
+    .profession {
+      font-size: 0.81em; } }
 
 .double-slash {
   letter-spacing: -3px;
@@ -2657,6 +2694,9 @@ a {
   position: relative;
   z-index: 5;
   font-weight: 400; }
+  @media screen and (max-width: 860px)  {
+    .portfolio {
+      width: 100%; } }
 
 /* Code used and adapted from Bourbon grid refill */
 .grid-items::after {
@@ -2677,12 +2717,12 @@ a {
   text-align: center;
   text-decoration: none;
   width: 100%; }
-  .grid-items .grid-item:hover .overlay {
+  .grid-items .grid-item:hover .overlay, .grid-items .grid-item:focus .overlay {
     transition: all 0.75s ease-in-out;
     opacity: 0.75;
     bottom: 0;
     height: 100%; }
-  .grid-items .grid-item:hover .grid-copy {
+  .grid-items .grid-item:hover .grid-copy, .grid-items .grid-item:focus .grid-copy {
     transition: all 0.75s ease-in-out;
     opacity: 1;
     bottom: 0;
@@ -2795,9 +2835,22 @@ a {
   opacity: 0;
   transition: all 0.75s ease-in-out; }
 .grid-items .coming-soon {
-  pointer-events: none;
+  cursor: default;
   opacity: 1;
   height: 10em;
   top: 0; }
+  .grid-items .coming-soon .reach-out {
+    position: absolute;
+    right: 95%;
+    bottom: 1.5em;
+    top: 1.5em;
+    transition: all 0.25s ease-in-out;
+    visibility: hidden;
+    opacity: 0; }
+  .grid-items .coming-soon:focus .reach-out, .grid-items .coming-soon:hover .reach-out {
+    right: 1.5em;
+    transition: all 0.75s ease-in-out;
+    visibility: visible;
+    opacity: 1; }
 
 /* End Bourbon grid refill code */

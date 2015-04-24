@@ -1,11 +1,14 @@
-$transition: all 0.25s ease-in-out;
-$slow-transition: all 0.75s ease-in-out;
 
 body {
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
   font-size: 1.25rem;
   margin: 0 3.25em;
+
+  @include media($mobile-large) {
+    margin: 0;
+    overflow-x: hidden;
+  }
 }
 
 main {
@@ -24,9 +27,22 @@ a {
   cursor: pointer;
   transition: $transition;
 
-  &:hover {
+  &:hover,
+  &:focus {
     transition: $transition;
     color: $gray;
+    outline: none;
+  }
+}
+
+.icon-block {
+
+  @include media($mobile-large) {
+    width: 480px;
+  }
+
+  @include media($mobile-medium) {
+    width: 100%;
   }
 }
 
@@ -37,6 +53,21 @@ a {
   font-size: 7rem;
   font-weight: 100;
   position: relative;
+
+  @include media($mobile-large) {
+    width: 70%;
+  }
+
+  @include media($mobile-medium) {
+    height: 100%;
+
+    &:before {
+      content: "";
+      padding-top: 64.5%;
+      display: block;
+    }
+  }
+
 }
 
 .monogram {
@@ -49,6 +80,10 @@ a {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   color: white;
+
+  @include media($mobile) {
+    font-size: 0.8em;
+  }
 }
 
 .w-g {
@@ -58,6 +93,11 @@ a {
 .headshot {
   display: inline-block;
   height: 12rem;
+
+  @include media($mobile-medium) {
+    width: 30%;
+    height: 100%;
+  }
 }
 
 .header {
@@ -73,6 +113,10 @@ a {
   text-transform: uppercase;
   font-weight: 800;
   font-size: 2.25em;
+
+  @include media($mobile-medium) {
+    font-size: 1.65em;
+  }
 }
 
 .profession {
@@ -80,6 +124,10 @@ a {
   font-size: 1.1em;
   font-weight: 400;
   text-transform: uppercase;
+
+  @include media($mobile-medium) {
+    font-size: 0.81em;
+  }
 }
 
 .double-slash {
@@ -147,6 +195,10 @@ a {
   position: relative;
   z-index: 5;
   font-weight: 400;
+
+  @include media($mobile-large) {
+    width: 100%;
+  }
 }
 
 /* Code used and adapted from Bourbon grid refill */
@@ -194,14 +246,16 @@ a {
     text-decoration: none;
     width: 100%;
 
-    &:hover .overlay {
+    &:hover .overlay,
+    &:focus .overlay {
       transition: $slow-transition;
       opacity: 0.75;
       bottom: 0;
       height: 100%;
     }
 
-    &:hover .grid-copy {
+    &:hover .grid-copy,
+    &:focus .grid-copy {
       transition: $slow-transition;
       opacity: 1;
       bottom: 0;
@@ -252,8 +306,8 @@ a {
 
     p {
         line-height: 1.5em;
-        @include media($medium-screen);
         margin-bottom: 1em;
+        @include media($medium-screen);
     }
   }
 
@@ -324,10 +378,29 @@ a {
   }
 
   .coming-soon {
-    pointer-events: none;
+    cursor: default;
     opacity: 1;
     height: 10em;
     top: 0;
+
+    .reach-out {
+      position: absolute;
+      right: 95%;
+      bottom: 1.5em;
+      top: 1.5em;
+      transition: $transition;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &:focus .reach-out,
+    &:hover .reach-out {
+      right: 1.5em;
+      transition: $slow-transition;
+      visibility: visible;
+      opacity: 1;
+    }
+
   }
 
 }
