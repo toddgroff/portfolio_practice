@@ -1,3 +1,6 @@
+html {
+  width: 100%;
+}
 
 body {
   font-family: 'Raleway', sans-serif;
@@ -141,7 +144,20 @@ a {
   bottom: -0.6em;
   left: -23em;
   z-index: -1;
+
+  @include media($mobile-large) {
+    left: -47em;
+  }
+
+  @include media($mobile-medium) {
+    left: -52em;
+  }
+
+  @include media($mobile) {
+    left: 75%;
+  }
 }
+
 
 .dash-side {
   position: absolute;
@@ -149,6 +165,10 @@ a {
   top: -78px;
   z-index: 5;
   background: white;
+
+  @include media($mobile-large) {
+    display: none;
+  }
 }
 
 .dash-footer {
@@ -156,6 +176,10 @@ a {
   bottom: -1em;
   left: -40em;
   z-index: -10;
+
+  @include media($mobile-large) {
+    display: none;
+  }
 }
 
 .call-to-action {
@@ -399,7 +423,12 @@ a {
       transition: $slow-transition;
       visibility: visible;
       opacity: 1;
+
+      @include media($mobile-large) {
+        visibility: hidden;
+      }
     }
+
 
   }
 
