@@ -110,6 +110,10 @@ a {
 .name-block {
   padding: 0.5em 1rem;
   vertical-align: bottom;
+
+  @include media($min-width) {
+    display: block;
+  }
 }
 
 .full-name {
@@ -150,7 +154,7 @@ a {
   }
 
   @include media($mobile-medium) {
-    left: -54em;
+    left: -54.5em;
   }
 }
 
@@ -173,9 +177,6 @@ a {
   left: -40em;
   z-index: -10;
 
-  @include media($mobile-large) {
-    display: none;
-  }
 }
 
 .call-to-action {
@@ -191,7 +192,7 @@ a {
   bottom: 3em;
   left: 41.58em;
   background: white;
-  padding-left: 1rem
+  padding-left: 1rem;
 
   .description {
     font-weight: 100;
@@ -202,8 +203,46 @@ a {
   }
 
   @include media($min-width) {
-    position: relative;
+    position: static;
     margin-bottom: 3em;
+  }
+}
+
+.contact-link {
+}
+
+.contact-button {
+  cursor: pointer;
+  background: $gray;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  padding: 1rem;
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  position: fixed;
+  right: -2em;
+  bottom: 406px;
+  z-index: 1000;
+  transition: $transition;
+  visibility: hidden;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    border-bottom: 10px solid lightgray;
+    background-color: lightgray;
+    transition: $transition;
+  }
+
+  @include media($min-width) {
+    visibility: visible;
   }
 }
 
@@ -285,6 +324,25 @@ a {
       opacity: 1;
       bottom: 0;
       top: 0;
+    }
+
+    .icon-info-1 {
+      visibility: hidden;
+      font-size: 1.5em;
+      background-color: #A8A9AD;
+      color: white;
+      position: absolute;
+      bottom: 0;
+      padding: 0.25em 0.25em 0.25em 0.1em;
+      left: 0;
+      width: 1.5em;
+      height: 1.5em;
+    }
+
+    @include media($mobile-large) {
+      .icon-info-1 {
+        visibility: visible;
+      }
     }
 
     @include media($large-screen) {
@@ -410,9 +468,8 @@ a {
 
     .reach-out {
       position: absolute;
-      right: 95%;
-      bottom: 1.5em;
-      top: 1.5em;
+      right: 50%;
+      bottom: 1em;
       transition: $transition;
       visibility: hidden;
       opacity: 0;
@@ -421,7 +478,7 @@ a {
     &:focus .reach-out,
     &:hover .reach-out {
       right: 1.5em;
-      transition: $slow-transition;
+      transition: all 2.75s ease-in-out;
       visibility: visible;
       opacity: 1;
 

@@ -2622,8 +2622,11 @@ a {
   display: inline-block; }
 
 .name-block {
-  padding: 0.5em 1em;
+  padding: 0.5em 1rem;
   vertical-align: bottom; }
+  @media screen and (max-width: 1325px)  {
+    .name-block {
+      display: block; } }
 
 .full-name {
   text-transform: uppercase;
@@ -2651,12 +2654,12 @@ a {
   bottom: -0.6em;
   left: -23em;
   z-index: -1; }
-  @media screen and (max-width: 1125px)  {
+  @media screen and (max-width: 1325px)  {
     .dash-header {
       left: -47em; } }
   @media screen and (max-width: 500px)  {
     .dash-header {
-      left: -54em; } }
+      left: -54.5em; } }
 
 .dash-side {
   position: absolute;
@@ -2664,7 +2667,7 @@ a {
   top: -78px;
   z-index: 5;
   background: white; }
-  @media screen and (max-width: 1125px)  {
+  @media screen and (max-width: 1325px)  {
     .dash-side {
       display: none; } }
 
@@ -2673,9 +2676,6 @@ a {
   bottom: -1em;
   left: -40em;
   z-index: -10; }
-  @media screen and (max-width: 860px)  {
-    .dash-footer {
-      display: none; } }
 
 .call-to-action {
   margin-top: 5em;
@@ -2689,13 +2689,46 @@ a {
   bottom: 3em;
   left: 41.58em;
   background: white;
-  padding: 0.5em 0.5em 0 0.5em; }
+  padding-left: 1rem; }
   .contact .description {
     font-weight: 100;
     font-size: 0.6em;
     padding: 0 2em 2em 0;
     line-height: 1.25em;
     max-width: 18em; }
+  @media screen and (max-width: 1325px)  {
+    .contact {
+      position: static;
+      margin-bottom: 3em; } }
+
+.contact-button {
+  cursor: pointer;
+  background: #A8A9AD;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  padding: 1rem;
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  position: fixed;
+  right: -2em;
+  bottom: 406px;
+  z-index: 1000;
+  transition: all 0.25s ease-in-out;
+  visibility: hidden; }
+  .contact-button:focus {
+    outline: none; }
+  .contact-button:hover {
+    border-bottom: 10px solid lightgray;
+    background-color: lightgray;
+    transition: all 0.25s ease-in-out; }
+  @media screen and (max-width: 1325px)  {
+    .contact-button {
+      visibility: visible; } }
 
 .icon-link {
   font-size: 1.5em; }
@@ -2742,6 +2775,20 @@ a {
     opacity: 1;
     bottom: 0;
     top: 0; }
+  .grid-items .grid-item .icon-info-1 {
+    visibility: hidden;
+    font-size: 1.5em;
+    background-color: #A8A9AD;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    padding: 0.25em 0.25em 0.25em 0.1em;
+    left: 0;
+    width: 1.5em;
+    height: 1.5em; }
+  @media screen and (max-width: 860px)  {
+    .grid-items .grid-item .icon-info-1 {
+      visibility: visible; } }
   @media screen and (min-width: 53.75em) {
     .grid-items .grid-item {
       width: 33.33333%; } }
@@ -2838,7 +2885,7 @@ a {
   opacity: 0.05;
   transition: all 0.75s ease-in-out; }
 .grid-items .grid-copy {
-  padding: 1.5em;
+  padding: 1rem;
   color: white;
   font-weight: 100;
   text-align: left;
@@ -2856,18 +2903,17 @@ a {
   top: 0; }
   .grid-items .coming-soon .reach-out {
     position: absolute;
-    right: 95%;
-    bottom: 1.5em;
-    top: 1.5em;
+    right: 50%;
+    bottom: 1em;
     transition: all 0.25s ease-in-out;
     visibility: hidden;
     opacity: 0; }
   .grid-items .coming-soon:focus .reach-out, .grid-items .coming-soon:hover .reach-out {
     right: 1.5em;
-    transition: all 0.75s ease-in-out;
+    transition: all 2.75s ease-in-out;
     visibility: visible;
     opacity: 1; }
-    @media screen and (max-width: 860px)  {
+    @media screen and (max-width: 1325px)  {
       .grid-items .coming-soon:focus .reach-out, .grid-items .coming-soon:hover .reach-out {
         visibility: hidden; } }
 

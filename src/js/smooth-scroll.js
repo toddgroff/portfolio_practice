@@ -1,13 +1,3 @@
-// The namespace for this application
-var app = {};
-
-app.showInitialPage = function () {
-  document.body.insertAdjacentHTML(
-    'beforeend',
-    '<h2>TODO: Remove example.js</h2>' +
-    '<p>And change init.js to do whatevz you need</p>');
-};
-
 app.smoothScroll = function (jQuery) {
   jQuery.mark = {
     jump: function (options) {
@@ -37,7 +27,3 @@ app.smoothScroll = function (jQuery) {
 jQuery(function(){
   jQuery.mark.jump();
 });
-
-app.smoothScroll();
-
-//# sourceMappingURL=app.js.map
