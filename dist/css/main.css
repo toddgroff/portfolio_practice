@@ -2631,7 +2631,7 @@ a {
   font-size: 2.25em; }
   @media screen and (max-width: 500px)  {
     .full-name {
-      font-size: 1.65em; } }
+      font-size: 1.4em; } }
 
 .profession {
   line-height: 1.2em;
@@ -2640,7 +2640,7 @@ a {
   text-transform: uppercase; }
   @media screen and (max-width: 500px)  {
     .profession {
-      font-size: 0.81em; } }
+      font-size: 0.7em; } }
 
 .double-slash {
   letter-spacing: -3px;
@@ -2651,15 +2651,12 @@ a {
   bottom: -0.6em;
   left: -23em;
   z-index: -1; }
-  @media screen and (max-width: 860px)  {
+  @media screen and (max-width: 1125px)  {
     .dash-header {
       left: -47em; } }
   @media screen and (max-width: 500px)  {
     .dash-header {
-      left: -52em; } }
-  @media screen and (max-width: 375px)  {
-    .dash-header {
-      left: 75%; } }
+      left: -54em; } }
 
 .dash-side {
   position: absolute;
@@ -2667,7 +2664,7 @@ a {
   top: -78px;
   z-index: 5;
   background: white; }
-  @media screen and (max-width: 860px)  {
+  @media screen and (max-width: 1125px)  {
     .dash-side {
       display: none; } }
 

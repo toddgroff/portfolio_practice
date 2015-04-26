@@ -108,7 +108,7 @@ a {
 }
 
 .name-block {
-  padding: 0.5em 1em;
+  padding: 0.5em 1rem;
   vertical-align: bottom;
 }
 
@@ -118,7 +118,7 @@ a {
   font-size: 2.25em;
 
   @include media($mobile-medium) {
-    font-size: 1.65em;
+    font-size: 1.4em;
   }
 }
 
@@ -129,7 +129,7 @@ a {
   text-transform: uppercase;
 
   @include media($mobile-medium) {
-    font-size: 0.81em;
+    font-size: 0.7em;
   }
 }
 
@@ -145,16 +145,12 @@ a {
   left: -23em;
   z-index: -1;
 
-  @include media($mobile-large) {
+  @include media($min-width) {
     left: -47em;
   }
 
   @include media($mobile-medium) {
-    left: -52em;
-  }
-
-  @include media($mobile) {
-    left: 75%;
+    left: -54em;
   }
 }
 
@@ -166,7 +162,7 @@ a {
   z-index: 5;
   background: white;
 
-  @include media($mobile-large) {
+  @include media($min-width) {
     display: none;
   }
 }
@@ -195,7 +191,7 @@ a {
   bottom: 3em;
   left: 41.58em;
   background: white;
-  padding: 0.5em 0.5em 0 0.5em;
+  padding-left: 1rem
 
   .description {
     font-weight: 100;
@@ -203,6 +199,11 @@ a {
     padding: 0 2em 2em 0;
     line-height: 1.25em;
     max-width: 18em;
+  }
+
+  @include media($min-width) {
+    position: relative;
+    margin-bottom: 3em;
   }
 }
 
@@ -387,7 +388,7 @@ a {
   }
 
   .grid-copy {
-    @include pad(1.5em);
+    @include pad(1rem);
     color: white;
     font-weight: 100;
     text-align: left;
@@ -424,7 +425,7 @@ a {
       visibility: visible;
       opacity: 1;
 
-      @include media($mobile-large) {
+      @include media($min-width) {
         visibility: hidden;
       }
     }
