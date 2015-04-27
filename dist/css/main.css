@@ -2716,7 +2716,7 @@ a {
   -o-transform: rotate(270deg);
   position: fixed;
   right: -2em;
-  bottom: 406px;
+  top: 40%;
   z-index: 1000;
   transition: all 0.25s ease-in-out;
   visibility: hidden; }
@@ -2780,15 +2780,13 @@ a {
     font-size: 1.5em;
     background-color: #A8A9AD;
     color: white;
-    position: absolute;
-    bottom: 0;
     padding: 0.25em 0.25em 0.25em 0.1em;
-    left: 0;
     width: 1.5em;
-    height: 1.5em; }
-  @media screen and (max-width: 860px)  {
-    .grid-items .grid-item .icon-info-1 {
-      visibility: visible; } }
+    height: 1.5em;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1000; }
   @media screen and (min-width: 53.75em) {
     .grid-items .grid-item {
       width: 33.33333%; } }
@@ -2889,6 +2887,7 @@ a {
   color: white;
   font-weight: 100;
   text-align: left;
+  overflow: auto;
   position: absolute;
   top: -100%;
   right: 0;

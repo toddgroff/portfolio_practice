@@ -1,1 +1,3 @@
+app.showInfo();
+
 app.smoothScroll();
