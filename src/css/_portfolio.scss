@@ -231,6 +231,11 @@ a {
   transition: $transition;
   visibility: hidden;
 
+  @include media($min-width) {
+    visibility: visible;
+
+  }
+
   &:focus {
     outline: none;
   }
@@ -241,9 +246,6 @@ a {
     transition: $transition;
   }
 
-  @include media($min-width) {
-    visibility: visible;
-  }
 }
 
 .icon-link {

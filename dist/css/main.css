@@ -2720,15 +2720,15 @@ a {
   z-index: 1000;
   transition: all 0.25s ease-in-out;
   visibility: hidden; }
+  @media screen and (max-width: 1325px)  {
+    .contact-button {
+      visibility: visible; } }
   .contact-button:focus {
     outline: none; }
   .contact-button:hover {
     border-bottom: 10px solid lightgray;
     background-color: lightgray;
     transition: all 0.25s ease-in-out; }
-  @media screen and (max-width: 1325px)  {
-    .contact-button {
-      visibility: visible; } }
 
 .icon-link {
   font-size: 1.5em; }
